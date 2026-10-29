@@ -14,6 +14,19 @@ window.addEventListener('pointermove', (e) => {
 });
 window.addEventListener('pointerleave', () => glow.style.opacity = '0');
 
+// profile tabs
+const tabBtns = document.querySelectorAll('.tab-btn');
+const tabPanels = document.querySelectorAll('.tab-panel');
+tabBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+    tabPanels.forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
 // scroll reveal
 const revealEls = document.querySelectorAll('.reveal, .reveal-up');
 const io = new IntersectionObserver((entries) => {

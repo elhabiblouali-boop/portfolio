@@ -7,18 +7,42 @@
 <link rel="stylesheet" href="styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&family=Permanent+Marker&family=Caveat:wght@500;600;700&family=Caveat+Brush&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="noise"></div>
 <div class="cursor-glow"></div>
 
+<script>
+  function logoFallback(img) {
+    if (img.src.endsWith('.svg')) { img.src = img.src.replace(/\.svg(\?.*)?$/, '.png'); }
+    else if (img.src.endsWith('.png')) { img.src = img.src.replace(/\.png(\?.*)?$/, '.jpg'); }
+    else { img.closest('.logo-item').classList.add('logo-fallback'); }
+  }
+</script>
+
+<svg class="icon-defs" aria-hidden="true">
+  <symbol id="ic-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="ic-briefcase" viewBox="0 0 24 24"><rect x="2.5" y="7" width="19" height="13" rx="2.5"/><path d="M8 7V5.5A2.5 2.5 0 0 1 10.5 3h3A2.5 2.5 0 0 1 16 5.5V7M2.5 13h19"/></symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+  <symbol id="ic-file" viewBox="0 0 24 24"><path d="M6 2.5h8l5 5v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-18a1 1 0 0 1 1-1Z"/><path d="M14 2.5V8h5"/><path d="M8.5 13h7M8.5 16.5h7"/></symbol>
+  <symbol id="ic-cap" viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 10.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5"/><path d="M22 8v6"/></symbol>
+  <symbol id="ic-badge" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 21l5-2.5L17 21l-1.5-7"/></symbol>
+  <symbol id="ic-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9S14.5 20.5 12 21c-2.5-.5-3.8-5.7-3.8-9S9.5 5.5 12 3Z"/></symbol>
+  <symbol id="ic-brush" viewBox="0 0 24 24"><path d="M14.5 2.5c3 1 7 5 7 7l-9 9-7-7 9-9Z"/><path d="M8.5 14.5 4 19c-.8.8-.8 2 0 2.5.6.4 1.8.4 2.5-.3L11 17"/></symbol>
+  <symbol id="ic-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></symbol>
+  <symbol id="ic-layers" viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 12l10 5 10-5"/><path d="M2 17l10 5 10-5"/></symbol>
+  <symbol id="ic-cursor" viewBox="0 0 24 24"><path d="M4 3l16 7-7 2-2 7-7-16Z"/></symbol>
+  <symbol id="ic-palette" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20c1.4 0 2-.9 2-1.8 0-.5-.2-.9-.5-1.3-.3-.4-.4-.8-.1-1.2.3-.4.9-.5 1.4-.5H17a3 3 0 0 0 3-3c0-6-3.6-11.2-8-11.2Z"/><circle cx="7.3" cy="10.3" r="1.1"/><circle cx="10.8" cy="6.8" r="1.1"/><circle cx="15.3" cy="8.3" r="1.1"/></symbol>
+  <symbol id="ic-tool" viewBox="0 0 24 24"><path d="M21 7a4 4 0 0 1-5.4 3.8L8.4 18 5.5 15.1l7.2-7.2A4 4 0 1 1 21 7Z"/></symbol>
+</svg>
+
 <header class="nav">
-  <a href="#top" class="nav-logo">EL.</a>
+  <a href="#top" class="nav-logo"><img src="assets/Logo-header.svg" alt="El Habib Louali" class="nav-logo-img"></a>
   <nav class="nav-links">
-    <a href="#work">Travaux</a>
     <a href="#about">Profil</a>
+    <a href="#work">Travaux</a>
     <a href="#skills">Compétences</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -29,8 +53,8 @@
 </header>
 
 <div class="mobile-menu">
-  <a href="#work">Travaux</a>
   <a href="#about">Profil</a>
+  <a href="#work">Travaux</a>
   <a href="#skills">Compétences</a>
   <a href="#contact">Contact</a>
 </div>
@@ -42,6 +66,7 @@
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
       <div class="grid-overlay"></div>
+      <img src="assets/Logo-BGpng.png" alt="" class="hero-logo-bg" aria-hidden="true">
     </div>
 
     <div class="hero-inner">
@@ -71,17 +96,56 @@
       </div>
     </div>
 
-    <a href="#work" class="scroll-cue" aria-label="Défiler vers les travaux">
+    <a href="#about" class="scroll-cue" aria-label="Défiler vers le profil">
       <span class="scroll-cue-text">Scroll</span>
       <span class="scroll-cue-line"><span class="scroll-cue-dot"></span></span>
     </a>
   </section>
 
   <section class="logos">
-    <p class="logos-label">Marques &amp; produits sur lesquels j'ai travaillé</p>
+    <p class="logos-label">+21 clients accompagnés — banque, télécom, assurance &amp; industrie</p>
     <div class="logos-row">
-      <span>INWI</span><span>Banque&nbsp;Populaire</span><span>JOOD</span>
-      <span>M-Banking</span><span>J-PASS</span><span>Market&nbsp;Place</span>
+      <span class="logo-item" data-slug="banque-populaire" data-name="Banque Populaire"><img src="assets/clients/banque-populaire.svg" alt="Banque Populaire" loading="lazy" onerror="logoFallback(this)"></span>
+      <span class="logo-item" data-slug="inwi" data-name="INWI"><img src="assets/clients/inwi.svg" alt="INWI" loading="lazy" onerror="logoFallback(this)"></span>
+      <span class="logo-item" data-slug="bank-of-africa" data-name="Bank of Africa"><img src="assets/clients/bank-of-africa.svg" alt="Bank of Africa" loading="lazy" onerror="logoFallback(this)"></span>
+      <span class="logo-item" data-slug="bcp-innov" data-name="BCP Innov"><img src="assets/clients/bcp-innov.svg" alt="BCP Innov" loading="lazy" onerror="logoFallback(this)"></span>
+      <span class="logo-item" data-slug="cdm" data-name="CDM"><img src="assets/clients/cdm.svg" alt="CDM" loading="lazy" onerror="logoFallback(this)"></span>
+      <span class="logo-item" data-slug="ccei-bank-ge" data-name="CCEI Bank GE"><img src="assets/clients/ccei-bank-ge.svg" alt="CCEI Bank GE" loading="lazy" onerror="logoFallback(this)"></span>
+      <span class="logo-item" data-slug="maroc-leasing" data-name="Maroc Leasing"><img src="assets/clients/maroc-leasing.svg" alt="Maroc Leasing" loading="lazy" onerror="logoFallback(this)"></span>
+      <span class="logo-item" data-slug="cfdt" data-name="Cfdt"><img src="assets/clients/cfdt.svg" alt="Cfdt" loading="lazy" onerror="logoFallback(this)"></span>
+      <span class="logo-item" data-slug="jesa" data-name="JESA"><img src="assets/clients/jesa.svg" alt="JESA" loading="lazy" onerror="logoFallback(this)"></span>
+      <span class="logo-item" data-slug="cfcim" data-name="CFCIM"><img src="assets/clients/cfcim.svg" alt="CFCIM" loading="lazy" onerror="logoFallback(this)"></span>
+      <span class="logo-item" data-slug="dericheburg" data-name="Dericheburg"><img src="assets/clients/dericheburg.svg" alt="Dericheburg" loading="lazy" onerror="logoFallback(this)"></span>
+      <span class="logo-item" data-slug="obytes" data-name="Obytes"><img src="assets/clients/obytes.svg" alt="Obytes" loading="lazy" onerror="logoFallback(this)"></span>
+      <span class="logo-item" data-slug="jawjab" data-name="JAWJAB"><img src="assets/clients/jawjab.svg" alt="JAWJAB" loading="lazy" onerror="logoFallback(this)"></span>
+      <span class="logo-item" data-slug="pca" data-name="PCA"><img src="assets/clients/pca.svg" alt="PCA" loading="lazy" onerror="logoFallback(this)"></span>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="about-photo reveal-up">
+      <img src="assets/profile.jpg" alt="El Habib Louali">
+    </div>
+    <div class="about-content">
+      <span class="section-tag reveal-up">01 — Profil</span>
+      <h2 class="reveal-up">Designer produit, curieux par nature.</h2>
+      <p class="reveal-up">
+        Basé à Casablanca, je travaille sur des produits digitaux pour des acteurs de la banque
+        et du télécom au Maroc — INWI, Banque Populaire, entre autres. J'aime transformer des
+        besoins métier complexes en parcours simples, cohérents et agréables à utiliser.
+      </p>
+      <p class="reveal-up">
+        Mon approche va de la recherche et du wireframing jusqu'au design system et au
+        prototype final, en collaboration étroite avec les équipes produit et développement.
+      </p>
+      <div class="about-stats reveal-up">
+        <div><strong>10+</strong><span>Ans d'expérience</span></div>
+        <div><strong>83</strong><span>Projets réalisés</span></div>
+        <div><strong>21+</strong><span>Clients accompagnés</span></div>
+      </div>
+      <div class="about-actions reveal-up">
+        <a href="profil.html" class="btn btn-primary">Voir mon profil complet →</a>
+      </div>
     </div>
   </section>
 
@@ -95,145 +159,54 @@
     <div class="work-grid">
 
       <article class="work-card reveal-up" data-index="01">
-        <a href="projects/inwi-my-inwi.html" class="work-media">
-          <img src="assets/projects/inwi-my-inwi/01.jpg" alt="INWI — My inwi" loading="lazy">
-        </a>
-        <div class="work-info">
-          <div class="work-heading">
-            <h3>INWI — My inwi</h3>
-            <a href="projects/inwi-my-inwi.html" class="work-link">↗</a>
+        <a href="projects/inwi-my-inwi.html" class="work-card-link">
+          <div class="work-media">
+            <img src="assets/projects/My inwi/01.jpg" alt="INWI — My inwi" loading="lazy">
           </div>
-          <p>Application mobile de gestion de compte télécom — onboarding, forfaits et paiement.</p>
-          <div class="work-tags"><span>UI/UX</span><span>Mobile App</span><span>Télécom</span></div>
-        </div>
+          <div class="work-info">
+            <div class="work-heading">
+              <h3>INWI — My inwi</h3>
+              <span class="logo-item work-client" data-slug="inwi" data-name="INWI"><img src="assets/clients/inwi.svg" alt="INWI" onerror="logoFallback(this)"></span>
+            </div>
+            <div class="work-tags"><span>UI/UX</span><span>Mobile App</span><span>Télécom</span></div>
+          </div>
+        </a>
       </article>
 
       <article class="work-card reveal-up" data-index="02">
-        <a href="projects/bp-pocket.html" class="work-media">
-          <img src="assets/projects/bp-pocket/01.png" alt="Banque Populaire — Pocket" loading="lazy">
-        </a>
-        <div class="work-info">
-          <div class="work-heading">
-            <h3>Banque Populaire — Pocket</h3>
-            <a href="projects/bp-pocket.html" class="work-link">↗</a>
+        <a href="projects/bp-pocket.html" class="work-card-link">
+          <div class="work-media">
+            <img src="assets/projects/Pocket Bank/01.png" alt="Banque Populaire — Pocket" loading="lazy">
           </div>
-          <p>Portefeuille digital et paiement mobile pensés pour un usage quotidien simple et rapide.</p>
-          <div class="work-tags"><span>Fintech</span><span>Mobile App</span><span>Design System</span></div>
-        </div>
+          <div class="work-info">
+            <div class="work-heading">
+              <h3>Banque Populaire — Pocket</h3>
+              <span class="logo-item work-client" data-slug="banque-populaire" data-name="Banque Populaire"><img src="assets/clients/banque-populaire.svg" alt="Banque Populaire" onerror="logoFallback(this)"></span>
+            </div>
+            <div class="work-tags"><span>Fintech</span><span>Mobile App</span><span>Design System</span></div>
+          </div>
+        </a>
       </article>
 
       <article class="work-card reveal-up" data-index="03">
-        <a href="projects/market-place.html" class="work-media">
-          <img src="assets/projects/market-place/01.png" alt="BP — Market Place Entreprise" loading="lazy">
-        </a>
-        <div class="work-info">
-          <div class="work-heading">
-            <h3>BP — Market Place Entreprise</h3>
-            <a href="projects/market-place.html" class="work-link">↗</a>
+        <a href="projects/boa-groupe.html" class="work-card-link">
+          <div class="work-media">
+            <img src="assets/projects/BOA Africa/01.png" alt="Bank of Africa — BOA Groupe" loading="lazy">
           </div>
-          <p>Plateforme web B2B réunissant des prestations pour startups, PME et grandes entreprises.</p>
-          <div class="work-tags"><span>Web Platform</span><span>B2B</span><span>UI Design</span></div>
-        </div>
-      </article>
-
-      <article class="work-card reveal-up" data-index="04">
-        <a href="projects/jood.html" class="work-media">
-          <img src="assets/projects/jood/01.png" alt="JOOD" loading="lazy">
-        </a>
-        <div class="work-info">
-          <div class="work-heading">
-            <h3>JOOD</h3>
-            <a href="projects/jood.html" class="work-link">↗</a>
+          <div class="work-info">
+            <div class="work-heading">
+              <h3>Bank of Africa — BOA Groupe</h3>
+              <span class="logo-item work-client" data-slug="bank-of-africa" data-name="Bank of Africa"><img src="assets/clients/bank-of-africa.svg" alt="Bank of Africa" onerror="logoFallback(this)"></span>
+            </div>
+            <div class="work-tags"><span>Web Platform</span><span>Corporate</span><span>Banque</span></div>
           </div>
-          <p>Identité produit et interface pour une plateforme de services orientée expérience utilisateur.</p>
-          <div class="work-tags"><span>Product Design</span><span>UI/UX</span></div>
-        </div>
-      </article>
-
-      <article class="work-card reveal-up" data-index="05">
-        <a href="projects/plateforme-inwi.html" class="work-media">
-          <img src="assets/projects/plateforme-inwi/01.jpg" alt="Plateforme INWI" loading="lazy">
         </a>
-        <div class="work-info">
-          <div class="work-heading">
-            <h3>Plateforme INWI</h3>
-            <a href="projects/plateforme-inwi.html" class="work-link">↗</a>
-          </div>
-          <p>Espace web de gestion client pour les services et offres du groupe INWI.</p>
-          <div class="work-tags"><span>Web Platform</span><span>Télécom</span></div>
-        </div>
-      </article>
-
-      <article class="work-card reveal-up" data-index="06">
-        <a href="projects/m-banking.html" class="work-media">
-          <img src="assets/projects/m-banking/01.jpg" alt="M-Banking" loading="lazy">
-        </a>
-        <div class="work-info">
-          <div class="work-heading">
-            <h3>M-Banking</h3>
-            <a href="projects/m-banking.html" class="work-link">↗</a>
-          </div>
-          <p>Application bancaire mobile — tableau de bord, virements et suivi des transactions.</p>
-          <div class="work-tags"><span>Fintech</span><span>Mobile App</span></div>
-        </div>
-      </article>
-
-      <article class="work-card reveal-up" data-index="07">
-        <a href="projects/j-pass.html" class="work-media">
-          <img src="assets/projects/j-pass/01.jpg" alt="J-PASS" loading="lazy">
-        </a>
-        <div class="work-info">
-          <div class="work-heading">
-            <h3>J-PASS</h3>
-            <a href="projects/j-pass.html" class="work-link">↗</a>
-          </div>
-          <p>Solution de badge et d'accès digital, pensée pour la simplicité et la rapidité.</p>
-          <div class="work-tags"><span>UI Design</span><span>Mobile App</span></div>
-        </div>
-      </article>
-
-      <article class="work-card reveal-up" data-index="08">
-        <a href="projects/poste-de-travail.html" class="work-media">
-          <img src="assets/projects/poste-de-travail/01.jpg" alt="Poste de travail" loading="lazy">
-        </a>
-        <div class="work-info">
-          <div class="work-heading">
-            <h3>Poste de travail</h3>
-            <a href="projects/poste-de-travail.html" class="work-link">↗</a>
-          </div>
-          <p>Interface métier — tableau de bord agence bancaire pour les opérations quotidiennes.</p>
-          <div class="work-tags"><span>Dashboard</span><span>UI Design</span></div>
-        </div>
       </article>
 
     </div>
 
     <div class="work-more">
-      <a href="travaux.html" class="btn btn-ghost">Voir tous les projets →</a>
-    </div>
-  </section>
-
-  <section id="about" class="about">
-    <div class="about-photo reveal-up">
-      <img src="assets/profile.jpg" alt="El Habib Louali">
-    </div>
-    <div class="about-content">
-      <span class="section-tag">01 — Profil</span>
-      <h2 class="reveal-up">Designer produit, curieux par nature.</h2>
-      <p class="reveal-up">
-        Basé à Casablanca, je travaille sur des produits digitaux pour des acteurs de la banque
-        et du télécom au Maroc — INWI, Banque Populaire, entre autres. J'aime transformer des
-        besoins métier complexes en parcours simples, cohérents et agréables à utiliser.
-      </p>
-      <p class="reveal-up">
-        Mon approche va de la recherche et du wireframing jusqu'au design system et au
-        prototype final, en collaboration étroite avec les équipes produit et développement.
-      </p>
-      <div class="about-stats reveal-up">
-        <div><strong>12+</strong><span>Projets publiés</span></div>
-        <div><strong>4+</strong><span>Secteurs (banque, télécom, retail...)</span></div>
-        <div><strong>100%</strong><span>Casablanca, Maroc</span></div>
-      </div>
+      <a href="travaux.html" class="btn btn-ghost">Voir plus de projets →</a>
     </div>
   </section>
 
@@ -244,24 +217,34 @@
     </div>
     <div class="skills-grid">
       <div class="skill-card reveal-up">
-        <span class="skill-num">01</span>
+        <svg class="ic-lg"><use href="#ic-brush"></use></svg>
         <h3>UI Design</h3>
         <p>Interfaces visuelles soignées, systèmes de composants et attention aux détails.</p>
       </div>
       <div class="skill-card reveal-up">
-        <span class="skill-num">02</span>
+        <svg class="ic-lg"><use href="#ic-search"></use></svg>
         <h3>UX &amp; Recherche</h3>
-        <p>Parcours utilisateurs, wireframes et tests pensés pour résoudre de vrais problèmes.</p>
+        <p>Parcours utilisateurs, méthodes ethnographiques et tests pensés pour résoudre de vrais problèmes.</p>
       </div>
       <div class="skill-card reveal-up">
-        <span class="skill-num">03</span>
+        <svg class="ic-lg"><use href="#ic-layers"></use></svg>
         <h3>Design System</h3>
         <p>Bibliothèques de composants cohérentes, scalables et documentées.</p>
       </div>
       <div class="skill-card reveal-up">
-        <span class="skill-num">04</span>
+        <svg class="ic-lg"><use href="#ic-cursor"></use></svg>
         <h3>Prototypage</h3>
         <p>Maquettes interactives haute-fidélité prêtes pour le développement.</p>
+      </div>
+      <div class="skill-card reveal-up">
+        <svg class="ic-lg"><use href="#ic-palette"></use></svg>
+        <h3>Branding &amp; Identité</h3>
+        <p>Logos, palettes de couleurs, typographie et création de supports digital &amp; print.</p>
+      </div>
+      <div class="skill-card reveal-up">
+        <svg class="ic-lg"><use href="#ic-tool"></use></svg>
+        <h3>Outils &amp; Collaboration</h3>
+        <p>Figma, Adobe Creative Cloud, Sketch, Notion, Trello, Miro, Axure.</p>
       </div>
     </div>
   </section>

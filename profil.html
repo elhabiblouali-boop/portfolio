@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profil — El Habib Louali</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="noise"></div>
+<div class="cursor-glow"></div>
+
+<svg class="icon-defs" aria-hidden="true">
+  <symbol id="ic-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="ic-briefcase" viewBox="0 0 24 24"><rect x="2.5" y="7" width="19" height="13" rx="2.5"/><path d="M8 7V5.5A2.5 2.5 0 0 1 10.5 3h3A2.5 2.5 0 0 1 16 5.5V7M2.5 13h19"/></symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+  <symbol id="ic-file" viewBox="0 0 24 24"><path d="M6 2.5h8l5 5v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-18a1 1 0 0 1 1-1Z"/><path d="M14 2.5V8h5"/><path d="M8.5 13h7M8.5 16.5h7"/></symbol>
+  <symbol id="ic-cap" viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 10.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5"/><path d="M22 8v6"/></symbol>
+  <symbol id="ic-badge" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 21l5-2.5L17 21l-1.5-7"/></symbol>
+  <symbol id="ic-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9S14.5 20.5 12 21c-2.5-.5-3.8-5.7-3.8-9S9.5 5.5 12 3Z"/></symbol>
+</svg>
+
+<header class="nav">
+  <a href="index.html#top" class="nav-logo"><img src="assets/Logo-header.svg" alt="El Habib Louali" class="nav-logo-img"></a>
+  <nav class="nav-links">
+    <a href="index.html#about">Profil</a>
+    <a href="index.html#work">Travaux</a>
+    <a href="index.html#skills">Compétences</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+  <a href="index.html#contact" class="nav-cta">Me contacter</a>
+  <button class="nav-burger" aria-label="menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-menu">
+  <a href="index.html#about">Profil</a>
+  <a href="index.html#work">Travaux</a>
+  <a href="index.html#skills">Compétences</a>
+  <a href="index.html#contact">Contact</a>
+</div>
+
+<main>
+  <section id="about" class="about profile-page">
+    <div class="about-photo reveal-up">
+      <img src="assets/profile.jpg" alt="El Habib Louali">
+    </div>
+    <div class="about-content">
+      <a href="index.html" class="back-link">← Retour à l'accueil</a>
+      <span class="section-tag reveal-up">Profil complet</span>
+
+      <div class="tabs-nav reveal-up" role="tablist">
+        <button class="tab-btn active" data-tab="apropos" role="tab" aria-selected="true">À propos</button>
+        <button class="tab-btn" data-tab="experience" role="tab" aria-selected="false">Expérience</button>
+        <button class="tab-btn" data-tab="formation" role="tab" aria-selected="false">Études &amp; certifs</button>
+      </div>
+
+      <div class="tab-panel active" id="tab-apropos" role="tabpanel">
+        <h2>Designer produit, curieux par nature.</h2>
+        <p>
+          Basé à Casablanca, je travaille sur des produits digitaux pour des acteurs de la banque
+          et du télécom au Maroc — INWI, Banque Populaire, entre autres. J'aime transformer des
+          besoins métier complexes en parcours simples, cohérents et agréables à utiliser.
+        </p>
+        <p>
+          Mon approche va de la recherche et du wireframing jusqu'au design system et au
+          prototype final, en collaboration étroite avec les équipes produit et développement.
+        </p>
+        <div class="about-stats">
+          <div><strong>10+</strong><span>Ans d'expérience</span></div>
+          <div><strong>83</strong><span>Projets réalisés</span></div>
+          <div><strong>21+</strong><span>Clients accompagnés</span></div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-experience" role="tabpanel">
+        <p class="tab-intro">10 ans à concevoir des produits digitaux pour la banque, le télécom, l'assurance et l'industrie.</p>
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-period">
+              <svg class="ic"><use href="#ic-calendar"></use></svg>
+              2023 — Aujourd'hui
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-head">
+                <h3>UX/UI Designer</h3>
+              </div>
+              <div class="timeline-tags">
+                <span><svg class="ic"><use href="#ic-briefcase"></use></svg> INTM Groupe</span>
+                <span><svg class="ic"><use href="#ic-pin"></use></svg> Casablanca</span>
+                <span><svg class="ic"><use href="#ic-file"></use></svg> Freelance</span>
+              </div>
+              <p>Conception UX/UI de plateformes de gestion métier pour le secteur bancaire, de l'analyse des besoins à la livraison des maquettes finales. Parcours utilisateurs, wireframes et interfaces haute-fidélité en garantissant la cohérence du Design System, en collaboration avec les équipes Produit et IT — intégration d'outils d'IA pour accélérer l'exploration de solutions.</p>
+              <p class="timeline-extra">Autres projets : Community, CMW, SYREC</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-period">
+              <svg class="ic"><use href="#ic-calendar"></use></svg>
+              2017 — 2023 (7 ans)
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-head">
+                <h3>Direction Artistique / Lead UX UI</h3>
+              </div>
+              <div class="timeline-tags">
+                <span><svg class="ic"><use href="#ic-briefcase"></use></svg> Neoxia Maroc</span>
+                <span><svg class="ic"><use href="#ic-pin"></use></svg> Casablanca</span>
+                <span><svg class="ic"><use href="#ic-file"></use></svg> CDI</span>
+              </div>
+              <p>Direction artistique et pilotage UX/UI de projets digitaux pour des clients bancaires, assurance, télécom et industrie — définition de la vision créative, wireframes, prototypes et interfaces haute-fidélité, en collaboration avec les équipes produit et techniques.</p>
+              <p class="timeline-extra">Autres projets : Bancaires, assurance, télécom et industrie</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-period">
+              <svg class="ic"><use href="#ic-calendar"></use></svg>
+              Août 2018 — Fév. 2019 (6 mois)
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-head">
+                <h3>Direction Artistique</h3>
+                <p class="timeline-project">Projet JOOD</p>
+              </div>
+              <div class="timeline-tags">
+                <span><svg class="ic"><use href="#ic-briefcase"></use></svg> Obytes</span>
+                <span><svg class="ic"><use href="#ic-pin"></use></svg> Casablanca · Koweït</span>
+                <span><svg class="ic"><use href="#ic-file"></use></svg> Mission</span>
+              </div>
+              <p>Création d'identités visuelles, direction artistique et conception des interfaces digitales du produit JOOD.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-period">
+              <svg class="ic"><use href="#ic-calendar"></use></svg>
+              2016 — 2017
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-head">
+                <h3>Web Designer &amp; Graphic Designer</h3>
+              </div>
+              <div class="timeline-tags">
+                <span><svg class="ic"><use href="#ic-briefcase"></use></svg> Dynatim</span>
+                <span><svg class="ic"><use href="#ic-pin"></use></svg> Rabat</span>
+                <span><svg class="ic"><use href="#ic-file"></use></svg> Mission</span>
+              </div>
+              <p>Conception de supports visuels, UI design et intégration.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-period">
+              <svg class="ic"><use href="#ic-calendar"></use></svg>
+              Mars — Déc. 2016 (10 mois)
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-head">
+                <h3>Web Designer &amp; Graphic Designer</h3>
+                <p class="timeline-project">Pôle Événementiel &amp; Pôle Communication</p>
+              </div>
+              <div class="timeline-tags">
+                <span><svg class="ic"><use href="#ic-briefcase"></use></svg> CFCIM</span>
+                <span><svg class="ic"><use href="#ic-pin"></use></svg> Casablanca</span>
+                <span><svg class="ic"><use href="#ic-file"></use></svg> Mission</span>
+              </div>
+              <p>Chambre française de commerce et d'industrie du Maroc — conception de supports pour les pôles événementiel et communication.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="timeline-mini">
+          <h3>Autres missions</h3>
+          <ul>
+            <li><strong>JAWJAB</strong><span class="mini-meta"><svg class="ic"><use href="#ic-file"></use></svg> Freelance</span><span class="mini-meta"><svg class="ic"><use href="#ic-pin"></use></svg> Casablanca</span><span class="mini-meta"><svg class="ic"><use href="#ic-calendar"></use></svg> Janv. 2017</span></li>
+            <li><strong>AURA Service</strong><span class="mini-meta"><svg class="ic"><use href="#ic-pin"></use></svg> Casablanca</span><span class="mini-meta"><svg class="ic"><use href="#ic-calendar"></use></svg> 3 mois</span></li>
+            <li><strong>TNC — The Next Clic</strong><span class="mini-meta"><svg class="ic"><use href="#ic-pin"></use></svg> Casablanca</span><span class="mini-meta"><svg class="ic"><use href="#ic-calendar"></use></svg> 2 mois</span></li>
+            <li><strong>MAGMA</strong><span class="mini-meta"><svg class="ic"><use href="#ic-pin"></use></svg> Rabat</span><span class="mini-meta"><svg class="ic"><use href="#ic-calendar"></use></svg> 1 mois</span></li>
+            <li><strong>United Service</strong><span class="mini-meta"><svg class="ic"><use href="#ic-pin"></use></svg> Rabat</span><span class="mini-meta"><svg class="ic"><use href="#ic-calendar"></use></svg> 1 mois</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-formation" role="tabpanel">
+        <p class="tab-intro">Formation initiale, certifications et langues de travail.</p>
+        <div class="edu-grid">
+          <div class="edu-card">
+            <svg class="ic-lg"><use href="#ic-cap"></use></svg>
+            <div>
+              <h3>Diplôme</h3>
+              <ul>
+                <li>ISAG — Institut Supérieur des Arts Graphiques<small>Licence professionnelle en Art Graphique (Bac+3)</small></li>
+                <li>Bac Arts Appliqués</li>
+                <li>Bac SVT</li>
+              </ul>
+            </div>
+          </div>
+          <div class="edu-card">
+            <svg class="ic-lg"><use href="#ic-badge"></use></svg>
+            <div>
+              <h3>Certificats</h3>
+              <ul>
+                <li>UX/UI Design — Great Learning</li>
+                <li>Design Thinking — Great Learning</li>
+                <li>Google Web Design</li>
+              </ul>
+            </div>
+          </div>
+          <div class="edu-card">
+            <svg class="ic-lg"><use href="#ic-globe"></use></svg>
+            <div>
+              <h3>Langues</h3>
+              <ul>
+                <li>Arabe <small>Natif</small></li>
+                <li>Français <small>Bilingue</small></li>
+                <li>Anglais <small>Conversationnel</small></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© 2026 El Habib Louali. Tous droits réservés.</p>
+  <a href="index.html#top" class="footer-top">Haut de page ↑</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

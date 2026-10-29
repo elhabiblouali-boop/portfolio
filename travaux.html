@@ -7,18 +7,26 @@
 <link rel="stylesheet" href="styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&family=Permanent+Marker&family=Caveat:wght@500;600;700&family=Caveat+Brush&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="noise"></div>
 <div class="cursor-glow"></div>
 
+<script>
+  function logoFallback(img) {
+    if (img.src.endsWith('.svg')) { img.src = img.src.replace(/\.svg(\?.*)?$/, '.png'); }
+    else if (img.src.endsWith('.png')) { img.src = img.src.replace(/\.png(\?.*)?$/, '.jpg'); }
+    else { img.closest('.logo-item').classList.add('logo-fallback'); }
+  }
+</script>
+
 <header class="nav">
-  <a href="index.html#top" class="nav-logo">EL.</a>
+  <a href="index.html#top" class="nav-logo"><img src="assets/Logo-header.svg" alt="El Habib Louali" class="nav-logo-img"></a>
   <nav class="nav-links">
-    <a href="index.html#work">Travaux</a>
     <a href="index.html#about">Profil</a>
+    <a href="index.html#work">Travaux</a>
     <a href="index.html#skills">Compétences</a>
     <a href="index.html#contact">Contact</a>
   </nav>
@@ -29,8 +37,8 @@
 </header>
 
 <div class="mobile-menu">
-  <a href="index.html#work">Travaux</a>
   <a href="index.html#about">Profil</a>
+  <a href="index.html#work">Travaux</a>
   <a href="index.html#skills">Compétences</a>
   <a href="index.html#contact">Contact</a>
 </div>
@@ -44,137 +52,232 @@
       <p>La liste complète des produits digitaux conçus pour des clients bancaires, télécom et institutionnels.</p>
     </div>
 
-    <div class="work-group">
-      <h3 class="work-group-title">Banque Populaire</h3>
-      <div class="work-grid">
+    <div class="work-grid">
 
-        <article class="work-card reveal-up" data-index="01">
-          <a href="projects/bp-pocket.html" class="work-media">
-            <img src="assets/projects/bp-pocket/01.png" alt="Banque Populaire — Pocket" loading="lazy">
-          </a>
+      <article class="work-card reveal-up" data-index="01">
+        <a href="projects/bp-pocket.html" class="work-card-link">
+          <div class="work-media">
+            <img src="assets/projects/Pocket Bank/01.png" alt="Banque Populaire — Pocket" loading="lazy">
+          </div>
           <div class="work-info">
             <div class="work-heading">
               <h3>Banque Populaire — Pocket</h3>
-              <a href="projects/bp-pocket.html" class="work-link">↗</a>
+              <span class="logo-item work-client" data-slug="banque-populaire" data-name="Banque Populaire"><img src="assets/clients/banque-populaire.svg" alt="Banque Populaire" onerror="logoFallback(this)"></span>
             </div>
-            <p>Portefeuille digital et paiement mobile pensés pour un usage quotidien simple et rapide.</p>
             <div class="work-tags"><span>Fintech</span><span>Mobile App</span><span>Design System</span></div>
           </div>
-        </article>
+        </a>
+      </article>
 
-        <article class="work-card reveal-up" data-index="02">
-          <a href="projects/market-place.html" class="work-media">
-            <img src="assets/projects/market-place/01.png" alt="BP — Market Place Entreprise" loading="lazy">
-          </a>
+      <article class="work-card reveal-up" data-index="02">
+        <a href="projects/market-place.html" class="work-card-link">
+          <div class="work-media">
+            <img src="assets/projects/Marketplace/01.png" alt="BP — Market Place Entreprise" loading="lazy">
+          </div>
           <div class="work-info">
             <div class="work-heading">
               <h3>BP — Market Place Entreprise</h3>
-              <a href="projects/market-place.html" class="work-link">↗</a>
+              <span class="logo-item work-client" data-slug="banque-populaire" data-name="Banque Populaire"><img src="assets/clients/banque-populaire.svg" alt="Banque Populaire" onerror="logoFallback(this)"></span>
             </div>
-            <p>Plateforme web B2B réunissant des prestations pour startups, PME et grandes entreprises.</p>
             <div class="work-tags"><span>Web Platform</span><span>B2B</span><span>UI Design</span></div>
           </div>
-        </article>
+        </a>
+      </article>
 
-        <article class="work-card reveal-up" data-index="03">
-          <a href="projects/poste-de-travail.html" class="work-media">
-            <img src="assets/projects/poste-de-travail/01.jpg" alt="Poste de travail" loading="lazy">
-          </a>
+      <article class="work-card reveal-up" data-index="03">
+        <a href="projects/e-banking.html" class="work-card-link">
+          <div class="work-media">
+            <img src="assets/projects/E-banking/01.png" alt="Banque Populaire — E-banking" loading="lazy">
+          </div>
           <div class="work-info">
             <div class="work-heading">
-              <h3>Poste de travail</h3>
-              <a href="projects/poste-de-travail.html" class="work-link">↗</a>
+              <h3>Banque Populaire — E-banking</h3>
+              <span class="logo-item work-client" data-slug="banque-populaire" data-name="Banque Populaire"><img src="assets/clients/banque-populaire.svg" alt="Banque Populaire" onerror="logoFallback(this)"></span>
             </div>
-            <p>Interface métier — tableau de bord agence bancaire pour les opérations quotidiennes.</p>
+            <div class="work-tags"><span>Fintech</span><span>Dashboard</span><span>Web Platform</span></div>
+          </div>
+        </a>
+      </article>
+
+      <article class="work-card reveal-up" data-index="04">
+        <a href="projects/m-banking.html" class="work-card-link">
+          <div class="work-media">
+            <img src="assets/projects/M-banking/01.jpg" alt="M-Banking" loading="lazy">
+          </div>
+          <div class="work-info">
+            <div class="work-heading">
+              <h3>Banque Populaire — M-Banking</h3>
+              <span class="logo-item work-client" data-slug="banque-populaire" data-name="Banque Populaire"><img src="assets/clients/banque-populaire.svg" alt="Banque Populaire" onerror="logoFallback(this)"></span>
+            </div>
+            <div class="work-tags"><span>Fintech</span><span>Mobile App</span></div>
+          </div>
+        </a>
+      </article>
+
+      <article class="work-card reveal-up" data-index="05">
+        <a href="projects/ode.html" class="work-card-link">
+          <div class="work-media">
+            <img src="assets/projects/ODE/01.png" alt="ODE — Observatoire de l'Entrepreneuriat" loading="lazy">
+          </div>
+          <div class="work-info">
+            <div class="work-heading">
+              <h3>Banque Populaire — ODE</h3>
+              <span class="logo-item work-client" data-slug="banque-populaire" data-name="Banque Populaire"><img src="assets/clients/banque-populaire.svg" alt="Banque Populaire" onerror="logoFallback(this)"></span>
+            </div>
+            <div class="work-tags"><span>Web Platform</span><span>Entrepreneuriat</span></div>
+          </div>
+        </a>
+      </article>
+
+      <article class="work-card reveal-up" data-index="06">
+        <a href="projects/poste-de-travail.html" class="work-card-link">
+          <div class="work-media">
+            <img src="assets/projects/My CDM Sales/01.jpg" alt="Poste de travail" loading="lazy">
+          </div>
+          <div class="work-info">
+            <div class="work-heading">
+              <h3>Crédit du Maroc — Poste de travail</h3>
+              <span class="logo-item work-client" data-slug="cdm" data-name="Crédit du Maroc"><img src="assets/clients/cdm.svg" alt="Crédit du Maroc" onerror="logoFallback(this)"></span>
+            </div>
             <div class="work-tags"><span>Dashboard</span><span>UI Design</span></div>
           </div>
-        </article>
+        </a>
+      </article>
 
-      </div>
-    </div>
-
-    <div class="work-group">
-      <h3 class="work-group-title">INWI</h3>
-      <div class="work-grid">
-
-        <article class="work-card reveal-up" data-index="04">
-          <a href="projects/inwi-my-inwi.html" class="work-media">
-            <img src="assets/projects/inwi-my-inwi/01.jpg" alt="INWI — My inwi" loading="lazy">
-          </a>
+      <article class="work-card reveal-up" data-index="07">
+        <a href="projects/inwi-my-inwi.html" class="work-card-link">
+          <div class="work-media">
+            <img src="assets/projects/My inwi/01.jpg" alt="INWI — My inwi" loading="lazy">
+          </div>
           <div class="work-info">
             <div class="work-heading">
               <h3>INWI — My inwi</h3>
-              <a href="projects/inwi-my-inwi.html" class="work-link">↗</a>
+              <span class="logo-item work-client" data-slug="inwi" data-name="INWI"><img src="assets/clients/inwi.svg" alt="INWI" onerror="logoFallback(this)"></span>
             </div>
-            <p>Application mobile de gestion de compte télécom — onboarding, forfaits et paiement.</p>
             <div class="work-tags"><span>UI/UX</span><span>Mobile App</span><span>Télécom</span></div>
           </div>
-        </article>
+        </a>
+      </article>
 
-        <article class="work-card reveal-up" data-index="05">
-          <a href="projects/plateforme-inwi.html" class="work-media">
-            <img src="assets/projects/plateforme-inwi/01.jpg" alt="Plateforme INWI" loading="lazy">
-          </a>
+      <article class="work-card reveal-up" data-index="08">
+        <a href="projects/plateforme-inwi.html" class="work-card-link">
+          <div class="work-media">
+            <img src="assets/projects/INWI/01.png" alt="Plateforme INWI" loading="lazy">
+          </div>
           <div class="work-info">
             <div class="work-heading">
               <h3>Plateforme INWI</h3>
-              <a href="projects/plateforme-inwi.html" class="work-link">↗</a>
+              <span class="logo-item work-client" data-slug="inwi" data-name="INWI"><img src="assets/clients/inwi.svg" alt="INWI" onerror="logoFallback(this)"></span>
             </div>
-            <p>Espace web de gestion client pour les services et offres du groupe INWI.</p>
             <div class="work-tags"><span>Web Platform</span><span>Télécom</span></div>
           </div>
-        </article>
+        </a>
+      </article>
 
-      </div>
-    </div>
+      <article class="work-card reveal-up" data-index="09">
+        <a href="projects/inwi-openinnov.html" class="work-card-link">
+          <div class="work-media">
+            <img src="assets/projects/Openinnov/01.png" alt="INWI Innov" loading="lazy">
+          </div>
+          <div class="work-info">
+            <div class="work-heading">
+              <h3>INWI Innov</h3>
+              <span class="logo-item work-client" data-slug="inwi" data-name="INWI"><img src="assets/clients/inwi.svg" alt="INWI" onerror="logoFallback(this)"></span>
+            </div>
+            <div class="work-tags"><span>Web Platform</span><span>Startups</span><span>Télécom</span></div>
+          </div>
+        </a>
+      </article>
 
-    <div class="work-group">
-      <h3 class="work-group-title">Autres projets</h3>
-      <div class="work-grid">
+      <article class="work-card reveal-up" data-index="10">
+        <a href="projects/boa-groupe.html" class="work-card-link">
+          <div class="work-media">
+            <img src="assets/projects/BOA Africa/01.png" alt="Bank of Africa — BOA Groupe" loading="lazy">
+          </div>
+          <div class="work-info">
+            <div class="work-heading">
+              <h3>Bank of Africa — BOA Groupe</h3>
+              <span class="logo-item work-client" data-slug="bank-of-africa" data-name="Bank of Africa"><img src="assets/clients/bank-of-africa.svg" alt="Bank of Africa" onerror="logoFallback(this)"></span>
+            </div>
+            <div class="work-tags"><span>Web Platform</span><span>Corporate</span><span>Banque</span></div>
+          </div>
+        </a>
+      </article>
 
-        <article class="work-card reveal-up" data-index="06">
-          <a href="projects/jood.html" class="work-media">
+      <article class="work-card reveal-up" data-index="11">
+        <a href="projects/boa-business-online.html" class="work-card-link">
+          <div class="work-media">
+            <img src="assets/projects/Businessonline/01.png" alt="BOA — Crédit Entreprise Online" loading="lazy">
+          </div>
+          <div class="work-info">
+            <div class="work-heading">
+              <h3>BOA — Crédit Entreprise Online</h3>
+              <span class="logo-item work-client" data-slug="bank-of-africa" data-name="Bank of Africa"><img src="assets/clients/bank-of-africa.svg" alt="Bank of Africa" onerror="logoFallback(this)"></span>
+            </div>
+            <div class="work-tags"><span>Web Platform</span><span>Fintech</span><span>B2B</span></div>
+          </div>
+        </a>
+      </article>
+
+      <article class="work-card reveal-up" data-index="12">
+        <a href="projects/ccei-bank.html" class="work-card-link">
+          <div class="work-media">
+            <img src="assets/projects/CCEI Bank/01.png" alt="CCEI Bank GE" loading="lazy">
+          </div>
+          <div class="work-info">
+            <div class="work-heading">
+              <h3>CCEI Bank GE</h3>
+              <span class="logo-item work-client" data-slug="ccei-bank-ge" data-name="CCEI Bank GE"><img src="assets/clients/ccei-bank-ge.svg" alt="CCEI Bank GE" onerror="logoFallback(this)"></span>
+            </div>
+            <div class="work-tags"><span>Web Platform</span><span>Banque</span><span>Corporate</span></div>
+          </div>
+        </a>
+      </article>
+
+      <article class="work-card reveal-up" data-index="13">
+        <a href="projects/jesa-dashboard.html" class="work-card-link">
+          <div class="work-media">
+            <img src="assets/projects/JESA/01.png" alt="JESA — Dashboard Projets" loading="lazy">
+          </div>
+          <div class="work-info">
+            <div class="work-heading">
+              <h3>JESA — Dashboard Projets</h3>
+              <span class="logo-item work-client" data-slug="jesa" data-name="JESA"><img src="assets/clients/jesa.svg" alt="JESA" onerror="logoFallback(this)"></span>
+            </div>
+            <div class="work-tags"><span>Dashboard</span><span>UI Design</span><span>Industrie</span></div>
+          </div>
+        </a>
+      </article>
+
+      <article class="work-card reveal-up" data-index="14">
+        <a href="projects/j-pass.html" class="work-card-link">
+          <div class="work-media">
+            <img src="assets/projects/J-pass/01.jpg" alt="J-PASS" loading="lazy">
+          </div>
+          <div class="work-info">
+            <div class="work-heading">
+              <h3>JESA — J-PASS</h3>
+              <span class="logo-item work-client" data-slug="jesa" data-name="JESA"><img src="assets/clients/jesa.svg" alt="JESA" onerror="logoFallback(this)"></span>
+            </div>
+            <div class="work-tags"><span>UI Design</span><span>Mobile App</span></div>
+          </div>
+        </a>
+      </article>
+
+      <article class="work-card reveal-up" data-index="15">
+        <a href="projects/jood.html" class="work-card-link">
+          <div class="work-media">
             <img src="assets/projects/jood/01.png" alt="JOOD" loading="lazy">
-          </a>
+          </div>
           <div class="work-info">
             <div class="work-heading">
               <h3>JOOD</h3>
-              <a href="projects/jood.html" class="work-link">↗</a>
             </div>
-            <p>Identité produit et interface pour une plateforme de services orientée expérience utilisateur.</p>
             <div class="work-tags"><span>Product Design</span><span>UI/UX</span></div>
           </div>
-        </article>
+        </a>
+      </article>
 
-        <article class="work-card reveal-up" data-index="07">
-          <a href="projects/m-banking.html" class="work-media">
-            <img src="assets/projects/m-banking/01.jpg" alt="M-Banking" loading="lazy">
-          </a>
-          <div class="work-info">
-            <div class="work-heading">
-              <h3>M-Banking</h3>
-              <a href="projects/m-banking.html" class="work-link">↗</a>
-            </div>
-            <p>Application bancaire mobile — tableau de bord, virements et suivi des transactions.</p>
-            <div class="work-tags"><span>Fintech</span><span>Mobile App</span></div>
-          </div>
-        </article>
-
-        <article class="work-card reveal-up" data-index="08">
-          <a href="projects/j-pass.html" class="work-media">
-            <img src="assets/projects/j-pass/01.jpg" alt="J-PASS" loading="lazy">
-          </a>
-          <div class="work-info">
-            <div class="work-heading">
-              <h3>J-PASS</h3>
-              <a href="projects/j-pass.html" class="work-link">↗</a>
-            </div>
-            <p>Solution de badge et d'accès digital, pensée pour la simplicité et la rapidité.</p>
-            <div class="work-tags"><span>UI Design</span><span>Mobile App</span></div>
-          </div>
-        </article>
-
-      </div>
     </div>
   </section>
 </main>
