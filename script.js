@@ -14,18 +14,21 @@ window.addEventListener('pointermove', (e) => {
 });
 window.addEventListener('pointerleave', () => glow.style.opacity = '0');
 
-// profile tabs
-const tabBtns = document.querySelectorAll('.tab-btn');
-const tabPanels = document.querySelectorAll('.tab-panel');
-tabBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
-    tabPanels.forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    btn.setAttribute('aria-selected', 'true');
-    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
-  });
-});
+// profile page quick-nav (scrollspy)
+const profileNavLinks = document.querySelectorAll('.profile-nav-link');
+if (profileNavLinks.length) {
+  const sections = [...profileNavLinks]
+    .map(link => document.getElementById(link.dataset.target))
+    .filter(Boolean);
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        profileNavLinks.forEach(l => l.classList.toggle('active', l.dataset.target === entry.target.id));
+      }
+    });
+  }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+  sections.forEach(s => spy.observe(s));
+}
 
 // scroll reveal
 const revealEls = document.querySelectorAll('.reveal, .reveal-up');

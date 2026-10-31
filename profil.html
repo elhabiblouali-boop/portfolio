@@ -27,8 +27,9 @@
 <header class="nav">
   <a href="index.html#top" class="nav-logo"><img src="assets/Logo-header.svg" alt="El Habib Louali" class="nav-logo-img"></a>
   <nav class="nav-links">
-    <a href="index.html#about">Profil</a>
-    <a href="index.html#work">Travaux</a>
+    <a href="index.html">Accueil</a>
+    <a href="profil.html">Profil</a>
+    <a href="travaux.html">Travaux</a>
     <a href="index.html#skills">Compétences</a>
     <a href="index.html#contact">Contact</a>
   </nav>
@@ -39,8 +40,9 @@
 </header>
 
 <div class="mobile-menu">
-  <a href="index.html#about">Profil</a>
-  <a href="index.html#work">Travaux</a>
+  <a href="index.html">Accueil</a>
+  <a href="profil.html">Profil</a>
+  <a href="travaux.html">Travaux</a>
   <a href="index.html#skills">Compétences</a>
   <a href="index.html#contact">Contact</a>
 </div>
@@ -54,18 +56,18 @@
       <a href="index.html" class="back-link">← Retour à l'accueil</a>
       <span class="section-tag reveal-up">Profil complet</span>
 
-      <div class="tabs-nav reveal-up" role="tablist">
-        <button class="tab-btn active" data-tab="apropos" role="tab" aria-selected="true">À propos</button>
-        <button class="tab-btn" data-tab="experience" role="tab" aria-selected="false">Expérience</button>
-        <button class="tab-btn" data-tab="formation" role="tab" aria-selected="false">Études &amp; certifs</button>
-      </div>
+      <nav class="profile-nav reveal-up" aria-label="Navigation profil">
+        <a href="#section-apropos" class="profile-nav-link active" data-target="section-apropos">À propos</a>
+        <a href="#section-experience" class="profile-nav-link" data-target="section-experience">Expérience</a>
+        <a href="#section-formation" class="profile-nav-link" data-target="section-formation">Études &amp; certifs</a>
+      </nav>
 
-      <div class="tab-panel active" id="tab-apropos" role="tabpanel">
+      <div class="profile-section" id="section-apropos">
         <h2>Designer produit, curieux par nature.</h2>
         <p>
-          Basé à Casablanca, je travaille sur des produits digitaux pour des acteurs de la banque
-          et du télécom au Maroc — INWI, Banque Populaire, entre autres. J'aime transformer des
-          besoins métier complexes en parcours simples, cohérents et agréables à utiliser.
+          Je conçois des produits digitaux pour des acteurs de la banque et du télécom au Maroc —
+          INWI, Banque Populaire, entre autres — en transformant des besoins métier complexes en
+          parcours simples, cohérents et agréables à utiliser.
         </p>
         <p>
           Mon approche va de la recherche et du wireframing jusqu'au design system et au
@@ -78,7 +80,8 @@
         </div>
       </div>
 
-      <div class="tab-panel" id="tab-experience" role="tabpanel">
+      <div class="profile-section" id="section-experience">
+        <h2>Expérience professionnelle</h2>
         <p class="tab-intro">10 ans à concevoir des produits digitaux pour la banque, le télécom, l'assurance et l'industrie.</p>
 
         <div class="timeline">
@@ -191,7 +194,8 @@
         </div>
       </div>
 
-      <div class="tab-panel" id="tab-formation" role="tabpanel">
+      <div class="profile-section" id="section-formation">
+        <h2>Études, certifications &amp; langues</h2>
         <p class="tab-intro">Formation initiale, certifications et langues de travail.</p>
         <div class="edu-grid">
           <div class="edu-card">
